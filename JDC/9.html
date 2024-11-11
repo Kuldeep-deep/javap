@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public static void preparedStatements(Connection conn) throws SQLException {
+        
+        String insertSQL = "INSERT INTO Employee (name, age, salary) VALUES (?, ?, ?)";
+        try (PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
+            pstmt.setString(1, "Alice");
+            pstmt.setInt(2, 35);
+            pstmt.setDouble(3, 70000);
+            pstmt.executeUpdate();
+            System.out.println("Row inserted using PreparedStatement.");
+        }
+    
+        
+        String updateSQL = "UPDATE Employee SET salary = ? WHERE name = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
+            pstmt.setDouble(1, 75000);
+            pstmt.setString(2, "Alice");
+            pstmt.executeUpdate();
+            System.out.println("Row updated using PreparedStatement.");
+        }
+    
+        
+        String deleteSQL = "DELETE FROM Employee WHERE name = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(deleteSQL)) {
+            pstmt.setString(1, "Alice");
+            pstmt.executeUpdate();
+            System.out.println("Row deleted using PreparedStatement.");
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Row inserted using PreparedStatement.
+    Row updated using PreparedStatement.
+    Row deleted using PreparedStatement.
+
+
+</pre>
+</body>
+</html>
+

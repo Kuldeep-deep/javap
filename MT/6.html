@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.io.BufferedReader;
+    import java.io.InputStreamReader;
+    import java.net.HttpURLConnection;
+    import java.net.URL;
+    import java.util.List;
+    import java.util.concurrent.Callable;
+    import java.util.concurrent.ExecutionException;
+    import java.util.concurrent.ExecutorService;
+    import java.util.concurrent.Executors;
+    import java.util.concurrent.Future;
+    
+    class WebCrawlerTask implements Callable<String> {
+        private final String url;
+    
+        public WebCrawlerTask(String url) {
+            this.url = url;
+        }
+    
+        private String fetchContent() {
+            StringBuilder content = new StringBuilder();
+            try {
+                URL urlObj = new URL(url);
+                HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+                connection.setRequestMethod("GET");
+    
+                try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                    String inputLine;
+                    while ((inputLine = in.readLine()) != null) {
+                        content.append(inputLine);
+                    }
+                }
+            } catch (Exception e) {
+                content.append("Failed to fetch content for URL: ").append(url);
+            }
+            return content.toString();
+        }
+    
+        @Override
+        public String call() {
+            System.out.println("Fetching content from: " + url);
+            return fetchContent();
+        }
+    }
+    
+    public class ConcurrentWebCrawler {
+        public static void main(String[] args) {
+            List<String> urls = List.of(
+                    "https://example.com",
+                    "https://example.org",
+                    "https://example.net"
+            );
+    
+            ExecutorService executor = Executors.newFixedThreadPool(3);
+            List<Future<String>> futures;
+    
+            try {
+                futures = executor.invokeAll(urls.stream().map(WebCrawlerTask::new).toList());
+                for (Future<String> future : futures) {
+                    try {
+                        System.out.println("Content fetched: \n" + future.get());
+                    } catch (InterruptedException | ExecutionException e) {
+                        System.out.println("Error occurred while fetching content: " + e.getMessage());
+                    }
+                }
+            } catch (InterruptedException e) {
+                System.out.println("Error occurred during task execution: " + e.getMessage());
+            } finally {
+                executor.shutdown();
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Fetching content from: https://example.com
+    Fetching content from: https://example.org
+    Fetching content from: https://example.net
+    Content fetched: 
+    <html>...</html> 
+    Content fetched: 
+    <html>...</html> 
+    Content fetched: 
+    <html>...</html> 
+     
+
+</pre>
+</body>
+</html>

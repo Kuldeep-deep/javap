@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class CountTwos {
+
+        public static void main(String[] args) {
+            int number = 225632;
+            System.out.println("Number of 2's in " + number + ": " + countTwos(number));
+        }
+    
+        public static int countTwos(int number) {
+            int count = 0;
+            while (number > 0) {
+                int digit = number % 10;
+                if (digit == 2) {
+                    count++;
+                }
+                number /= 10;
+            }
+            return count;
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Number of 2's in 225632: 3
+    
+
+</pre>
+</body>
+</html>

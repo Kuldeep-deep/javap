@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    interface Resizable {
+        void resizeWidth(int width);
+        void resizeHeight(int height);
+    }
+    
+    class Rectangle implements Resizable {
+        private int width;
+        private int height;
+    
+        public Rectangle(int width, int height) {
+            this.width = width;
+            this.height = height;
+        }
+    
+        public void resizeWidth(int width) {
+            this.width = width;
+            System.out.println("Rectangle width resized to: " + this.width);
+        }
+    
+        public void resizeHeight(int height) {
+            this.height = height;
+            System.out.println("Rectangle height resized to: " + this.height);
+        }
+    
+        public void displayDimensions() {
+            System.out.println("Rectangle dimensions - Width: " + width + ", Height: " + height);
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Rectangle rectangle = new Rectangle(10, 20);
+            rectangle.displayDimensions();
+    
+            rectangle.resizeWidth(15);
+            rectangle.resizeHeight(25);
+    
+            rectangle.displayDimensions();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Rectangle dimensions - Width: 10, Height: 20
+    Rectangle width resized to: 15
+    Rectangle height resized to: 25
+    Rectangle dimensions - Width: 15, Height: 25
+        
+
+</pre>
+</body>
+</html>

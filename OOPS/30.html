@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Circle {
+        private double radius;
+    
+        public double getRadius() {
+            return radius;
+        }
+    
+        public void setRadius(double radius) {
+            this.radius = radius;
+        }
+    
+        public double calculateArea() {
+            return Math.PI * radius * radius;
+        }
+    
+        public double calculatePerimeter() {
+            return 2 * Math.PI * radius;
+        }
+    
+        public static void main(String[] args) {
+            Circle circle = new Circle();
+            circle.setRadius(5);
+            System.out.println("Area: " + circle.calculateArea());
+            System.out.println("Perimeter: " + circle.calculatePerimeter());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Area: 78.53981633974483
+Perimeter: 31.41592653589793
+
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Employee {
+        private int employeeId;
+        private String employeeName;
+        private double employeeSalary;
+    
+        public int getEmployeeId() {
+            return employeeId;
+        }
+    
+        public void setEmployeeId(int employeeId) {
+            this.employeeId = employeeId;
+        }
+    
+        public String getEmployeeName() {
+            return employeeName;
+        }
+    
+        public void setEmployeeName(String employeeName) {
+            this.employeeName = employeeName;
+        }
+    
+        public String getEmployeeSalary() {
+            return String.format("$%.2f", employeeSalary);
+        }
+    
+        public void setEmployeeSalary(double employeeSalary) {
+            this.employeeSalary = employeeSalary;
+        }
+    
+        public static void main(String[] args) {
+            Employee emp = new Employee();
+            emp.setEmployeeId(101);
+            emp.setEmployeeName("John Doe");
+            emp.setEmployeeSalary(75000);
+            System.out.println("Employee ID: " + emp.getEmployeeId());
+            System.out.println("Employee Name: " + emp.getEmployeeName());
+            System.out.println("Employee Salary: " + emp.getEmployeeSalary());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Employee ID: 101
+Employee Name: John Doe
+Employee Salary: $75000.00
+
+
+</pre>
+</body>
+</html>

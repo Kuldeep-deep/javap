@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.sql.Timestamp;
+    import java.util.Date;
+    
+    public class TimestampToDate {
+        public static void main(String[] args) {
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis()); // current timestamp
+            
+            // Convert Timestamp to Date
+            Date date = new Date(timestamp.getTime());
+            
+            // Output the result
+            System.out.println("Timestamp: " + timestamp);
+            System.out.println("Date: " + date);
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Timestamp: 2024-11-07 13:45:56.123
+    Date: Wed Nov 07 13:45:56 IST 2024
+       
+
+</pre>
+</body>
+</html>

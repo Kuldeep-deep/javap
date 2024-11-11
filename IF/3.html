@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    interface Flyable {
+        void fly_obj();
+    }
+    
+    class Spacecraft implements Flyable {
+        public void fly_obj() {
+            System.out.println("Spacecraft is flying in space.");
+        }
+    }
+    
+    class Airplane implements Flyable {
+        public void fly_obj() {
+            System.out.println("Airplane is flying at high altitudes.");
+        }
+    }
+    
+    class Helicopter implements Flyable {
+        public void fly_obj() {
+            System.out.println("Helicopter is flying with rotor blades.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Flyable spacecraft = new Spacecraft();
+            Flyable airplane = new Airplane();
+            Flyable helicopter = new Helicopter();
+    
+            spacecraft.fly_obj();
+            airplane.fly_obj();
+            helicopter.fly_obj();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Spacecraft is flying in space.
+Airplane is flying at high altitudes.
+Helicopter is flying with rotor blades.
+
+
+</pre>
+</body>
+</html>

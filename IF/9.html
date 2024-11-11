@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    interface Searchable {
+        boolean search(String keyword);
+    }
+    
+    class Document implements Searchable {
+        private String text;
+    
+        public Document(String text) {
+            this.text = text;
+        }
+    
+        public boolean search(String keyword) {
+            return text.contains(keyword);
+        }
+    }
+    
+    class WebPage implements Searchable {
+        private String content;
+    
+        public WebPage(String content) {
+            this.content = content;
+        }
+    
+        public boolean search(String keyword) {
+            return content.toLowerCase().contains(keyword.toLowerCase());
+        }
+    }
+    
+    public class SearchTest {
+        public static void main(String[] args) {
+            Searchable doc = new Document("This is a simple document containing text data.");
+            Searchable webPage = new WebPage("Welcome to the Homepage of our website!");
+    
+            String keyword1 = "text";
+            String keyword2 = "Homepage";
+    
+            System.out.println("Document search result for 'text': " + doc.search(keyword1));
+            System.out.println("WebPage search result for 'Homepage': " + webPage.search(keyword2));
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Document search result for 'text': true
+    WebPage search result for 'Homepage': true
+      
+
+</pre>
+</body>
+</html>
+

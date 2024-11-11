@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Employee {
+        String name, address, jobTitle;
+        double salary;
+    
+        public double calculateBonus() {
+            return salary * 0.1;
+        }
+    }
+    
+    class Manager extends Employee {
+        @Override
+        public double calculateBonus() {
+            return salary * 0.2;
+        }
+    
+        public void manageProjects() {
+            System.out.println("Managing projects.");
+        }
+    }
+    
+    class Developer extends Employee {
+        @Override
+        public double calculateBonus() {
+            return salary * 0.15;
+        }
+    
+        public void generateReports() {
+            System.out.println("Generating performance reports.");
+        }
+    }
+    
+    class Programmer extends Employee {
+        @Override
+        public double calculateBonus() {
+            return salary * 0.12;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Manager manager = new Manager();
+            manager.salary = 80000;
+            System.out.println("Manager Bonus: " + manager.calculateBonus());
+    
+            Developer developer = new Developer();
+            developer.salary = 70000;
+            System.out.println("Developer Bonus: " + developer.calculateBonus());
+    
+            Programmer programmer = new Programmer();
+            programmer.salary = 60000;
+            System.out.println("Programmer Bonus: " + programmer.calculateBonus());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Manager Bonus: 16000.0
+Developer Bonus: 10500.0
+Programmer Bonus: 7200.0
+
+
+</pre>
+</body>
+</html>

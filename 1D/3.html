@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Arrays;
+
+    public class LeftRotateArray {
+        public static void main(String[] args) {
+            int[] array = {1, 2, 3, 4, 5};
+            int n = 2;
+    
+            System.out.println("Original array: " + Arrays.toString(array));
+            leftRotate(array, n);
+            System.out.println("Array after left rotation by " + n + " positions: " + Arrays.toString(array));
+        }
+    
+        public static void leftRotate(int[] array, int n) {
+            int length = array.length;
+            n = n % length;
+            int[] temp = new int[n];
+    
+            for (int i = 0; i < n; i++) {
+                temp[i] = array[i];
+            }
+    
+            for (int i = 0; i < length - n; i++) {
+                array[i] = array[i + n];
+            }
+    
+            for (int i = 0; i < n; i++) {
+                array[length - n + i] = temp[i];
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Original array: [1, 2, 3, 4, 5]
+Array after left rotation by 2 positions: [3, 4, 5, 1, 2]
+
+
+</pre>
+</body>
+</html>

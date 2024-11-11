@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    abstract class Shape3D {
+        abstract double calculateVolume();
+        abstract double calculateSurfaceArea();
+    }
+    
+    class Sphere extends Shape3D {
+        double radius;
+    
+        Sphere(double radius) {
+            this.radius = radius;
+        }
+    
+        @Override
+        double calculateVolume() {
+            return (4/3.0) * Math.PI * Math.pow(radius, 3);
+        }
+    
+        @Override
+        double calculateSurfaceArea() {
+            return 4 * Math.PI * Math.pow(radius, 2);
+        }
+    }
+    
+    class Cube extends Shape3D {
+        double side;
+    
+        Cube(double side) {
+            this.side = side;
+        }
+    
+        @Override
+        double calculateVolume() {
+            return Math.pow(side, 3);
+        }
+    
+        @Override
+        double calculateSurfaceArea() {
+            return 6 * Math.pow(side, 2);
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Shape3D sphere = new Sphere(3);
+            System.out.println("Sphere Volume: " + sphere.calculateVolume());
+            System.out.println("Sphere Surface Area: " + sphere.calculateSurfaceArea());
+    
+            Shape3D cube = new Cube(2);
+            System.out.println("Cube Volume: " + cube.calculateVolume());
+            System.out.println("Cube Surface Area: " + cube.calculateSurfaceArea());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Sphere Volume: 113.09733552923255
+    Sphere Surface Area: 113.09733552923255
+    Cube Volume: 8.0
+    Cube Surface Area: 24.0
+     
+
+</pre>
+</body>
+</html>

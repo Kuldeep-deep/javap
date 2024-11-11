@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class NestedTryExample {
+
+        public static void main(String[] args) {
+            try {
+                int[] numbers = {1, 2, 3};
+                
+                try {
+                    // Inner try block
+                    int result = numbers[5]; 
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    System.out.println("Inner Catch: Array index is out of bounds!");
+                }
+                
+                int division = 10 / 0;  
+            } catch (ArithmeticException e) {
+                System.out.println("Outer Catch: Division by zero!");
+            } catch (Exception e) {
+                System.out.println("General Exception: " + e.getMessage());
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Inner Catch: Array index is out of bounds!
+Outer Catch: Division by zero!
+
+
+</pre>
+</body>
+</html>

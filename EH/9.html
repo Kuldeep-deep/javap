@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.sql.Connection;
+    import java.sql.DriverManager;
+    import java.sql.SQLException;
+    
+    public class DatabaseManager {
+    
+        public static Connection manageDatabaseDriver(String jdbcDriver, String dbURL, String username, String password) throws SQLException {
+            try {
+                
+                Class.forName(jdbcDriver);
+    
+                
+                Connection connection = DriverManager.getConnection(dbURL, username, password);
+                return connection;
+            } catch (ClassNotFoundException e) {
+                throw new SQLException("JDBC Driver not found: " + e.getMessage());
+            } catch (SQLException e) {
+                throw new SQLException("Database connection failed: " + e.getMessage());
+            }
+        }
+    
+        public static void main(String[] args) {
+            String jdbcDriver = "com.mysql.cj.jdbc.Driver"; // MySQL driver
+            String dbURL = "jdbc:mysql:
+            String username = "root"; 
+            String password = "password"; 
+    
+            try {
+                Connection connection = manageDatabaseDriver(jdbcDriver, dbURL, username, password);
+                System.out.println("Database connection successful!");
+                connection.close();  
+            } catch (SQLException e) {
+                System.out.println("Exception caught: " + e.getMessage());
+            }
+        }
+    }    
+    <h2>OUTPUT</h2>
+    Exception caught: Database connection failed: Access denied for user 'root'@'localhost' (using password: YES)
+ 
+
+</pre>
+</body>
+</html>
+

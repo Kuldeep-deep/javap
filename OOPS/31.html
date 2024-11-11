@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Car {
+        private String companyName;
+        private String modelName;
+        private int year;
+        private double mileage;
+    
+        public String getCompanyName() {
+            return companyName;
+        }
+    
+        public void setCompanyName(String companyName) {
+            this.companyName = companyName;
+        }
+    
+        public String getModelName() {
+            return modelName;
+        }
+    
+        public void setModelName(String modelName) {
+            this.modelName = modelName;
+        }
+    
+        public int getYear() {
+            return year;
+        }
+    
+        public void setYear(int year) {
+            this.year = year;
+        }
+    
+        public double getMileage() {
+            return mileage;
+        }
+    
+        public static void main(String[] args) {
+            Car car = new Car();
+            car.setCompanyName("Toyota");
+            car.setModelName("Camry");
+            car.setYear(2020);
+            System.out.println("Company: " + car.getCompanyName());
+            System.out.println("Model: " + car.getModelName());
+            System.out.println("Year: " + car.getYear());
+            System.out.println("Mileage: " + car.getMileage());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Company: Toyota
+Model: Camry
+Year: 2020
+Mileage: 0.0
+
+
+</pre>
+</body>
+</html>

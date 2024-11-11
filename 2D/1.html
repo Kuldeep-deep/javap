@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class MatrixInput {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of rows: ");
+            int rows = scanner.nextInt();
+            
+            System.out.print("Enter the number of columns: ");
+            int columns = scanner.nextInt();
+    
+            int[][] matrix = new int[rows][columns];
+    
+            System.out.println("Enter the elements of the matrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.print("Element [" + i + "][" + j + "]: ");
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            System.out.println("\nMatrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.print(matrix[i][j] + "\t");
+                }
+                System.out.println();
+            }
+    
+            scanner.close();
+        }
+    }
+    <h2>OUTPUT</h2>
+    
+Enter the number of rows: 3
+Enter the number of columns: 3
+Enter the elements of the matrix:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 3
+Element [1][0]: 4
+Element [1][1]: 5
+Element [1][2]: 6
+Element [2][0]: 7
+Element [2][1]: 8
+Element [2][2]: 9
+</pre>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.awt.*;
+
+    public class ChoiceCustomLayout extends Frame {
+        public ChoiceCustomLayout() {
+            setLayout(null);
+            Choice choice = new Choice();
+            choice.add("Option 1");
+            choice.add("Option 2");
+            choice.add("Option 3");
+            choice.setBounds(50, 50, 100, 30);
+            add(choice);
+            setSize(200, 150);
+            setVisible(true);
+        }
+        public static void main(String[] args) {
+            new ChoiceCustomLayout();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    <img src="11.jpg">
+
+</pre>
+</body>
+</html>

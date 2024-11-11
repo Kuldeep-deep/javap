@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    mypackage/
+    ├── ClassA.java
+    ├── ClassB.java
+    ├── ClassC.java
+    └── ClassD.java
+Main.java
+
+package mypackage;
+
+public class ClassA {
+    public void displayA() {
+        System.out.println("This is ClassA");
+    }
+}
+
+package mypackage;
+
+public class ClassB {
+    public void displayB() {
+        System.out.println("This is ClassB");
+    }
+}
+
+package mypackage;
+
+public class ClassC {
+    public void displayC() {
+        System.out.println("This is ClassC");
+    }
+}
+
+package mypackage;
+
+public class ClassD {
+    public void displayD() {
+        System.out.println("This is ClassD");
+    }
+}
+
+import mypackage.ClassA;
+import mypackage.ClassB;
+import mypackage.ClassC;
+import mypackage.ClassD;
+
+public class Main {
+    public static void main(String[] args) {
+        ClassA classA = new ClassA();
+        classA.displayA();
+
+        ClassB classB = new ClassB();
+        classB.displayB();
+
+        ClassC classC = new ClassC();
+        classC.displayC();
+
+        ClassD classD = new ClassD();
+        classD.displayD();
+    }
+}
+
+    <h2>OUTPUT</h2>
+    This is ClassA
+This is ClassB
+This is ClassC
+This is ClassD
+
+
+</pre>
+</body>
+</html>

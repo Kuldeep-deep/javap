@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public static void scrollableReadOnlyResultSet(Connection conn, int rowNum) throws SQLException {
+        String selectSQL = "SELECT * FROM Employee";
+        try (Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+             ResultSet rs = stmt.executeQuery(selectSQL)) {
+            if (rs.absolute(rowNum)) {
+                System.out.println("ID: " + rs.getInt("id") +
+                                   ", Name: " + rs.getString("name") +
+                                   ", Age: " + rs.getInt("age") +
+                                   ", Salary: " + rs.getDouble("salary"));
+            } else {
+                System.out.println("Row " + rowNum + " not found.");
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    ID: 2, Name: Jane Doe, Age: 28, Salary: 60000.0
+
+
+</pre>
+</body>
+</html>

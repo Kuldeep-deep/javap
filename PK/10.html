@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    package employee;
+
+    public class Employee {
+        public String name;
+        public int empId;
+    
+        public Employee(String name, int empId) {
+            this.name = name;
+            this.empId = empId;
+        }
+    
+        public void displayDetails() {
+            System.out.println("Employee Name: " + name);
+            System.out.println("Employee ID: " + empId);
+        }
+    }
+ ----------------------------------------------------------------------------------------------------
+ import employee.Employee;
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee("John Doe", 101);
+        e.displayDetails();
+        System.out.println("Employee Name from Main: " + e.name);
+        System.out.println("Employee ID from Main: " + e.empId);
+    }
+}
+    
+    <h2>OUTPUT</h2>
+    Employee Name: John Doe
+Employee ID: 101
+Employee Name from Main: John Doe
+Employee ID from Main: 101
+
+
+</pre>
+</body>
+</html>

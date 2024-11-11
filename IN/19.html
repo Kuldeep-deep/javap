@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    abstract class Employee {
+        abstract double calculateSalary();
+        abstract void displayInfo();
+    }
+    
+    class Manager extends Employee {
+        @Override
+        double calculateSalary() {
+            return 70000;
+        }
+    
+        @Override
+        void displayInfo() {
+            System.out.println("Manager with salary: " + calculateSalary());
+        }
+    }
+    
+    class Programmer extends Employee {
+        @Override
+        double calculateSalary() {
+            return 50000;
+        }
+    
+        @Override
+        void displayInfo() {
+            System.out.println("Programmer with salary: " + calculateSalary());
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Employee manager = new Manager();
+            manager.displayInfo();
+    
+            Employee programmer = new Programmer();
+            programmer.displayInfo();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Manager with salary: 70000.0
+    Programmer with salary: 50000.0
+     
+
+</pre>
+</body>
+</html>

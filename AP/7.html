@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class DrawConcentricCirclesApplet extends Applet {
+        public void paint(Graphics g) {
+            for (int i = 1; i <= 4; i++) {
+                g.drawOval(50 - i * 10, 50 - i * 10, 100 + i * 20, 100 + i * 20);
+            }
+        }
+    }
+    
+    
+
+</pre>
+</body>
+</html>

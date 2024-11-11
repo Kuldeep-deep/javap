@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class MyThread extends Thread {
+        private final String threadName;
+    
+        public MyThread(String threadName) {
+            this.threadName = threadName;
+        }
+    
+        @Override
+        public void run() {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println(threadName + " is running iteration " + i);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    System.out.println(threadName + " interrupted: " + e.getMessage());
+                }
+            }
+            System.out.println(threadName + " has finished executing.");
+        }
+    }
+    
+    public class MultiThreadExample {
+        public static void main(String[] args) {
+            MyThread thread1 = new MyThread("Thread 1");
+            MyThread thread2 = new MyThread("Thread 2");
+            MyThread thread3 = new MyThread("Thread 3");
+    
+            thread1.start();
+            thread2.start();
+            thread3.start();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Thread 1 is running iteration 1
+    Thread 2 is running iteration 1
+    Thread 3 is running iteration 1
+    Thread 1 is running iteration 2
+    Thread 2 is running iteration 2
+    Thread 3 is running iteration 2
+    ...
+    Thread 1 has finished executing.
+    Thread 2 has finished executing.
+    Thread 3 has finished executing.
+       
+
+</pre>
+</body>
+</html>
+

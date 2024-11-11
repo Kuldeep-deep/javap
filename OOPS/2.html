@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class Dog {
+        private String name;
+        private String breed;
+    
+        public Dog(String name, String breed) {
+            this.name = name;
+            this.breed = breed;
+        }
+    
+        public void setName(String name) {
+            this.name = name;
+        }
+    
+        public void setBreed(String breed) {
+            this.breed = breed;
+        }
+    
+        public void display() {
+            System.out.println("Name: " + name + ", Breed: " + breed);
+        }
+    
+        public static void main(String[] args) {
+            Dog d1 = new Dog("Max", "Labrador");
+            Dog d2 = new Dog("Bella", "Beagle");
+    
+            d1.setName("Rocky");
+            d1.setBreed("German Shepherd");
+            d1.display();
+            d2.display();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Name: Rocky, Breed: German Shepherd
+    Name: Bella, Breed: Beagle
+     
+
+</pre>
+</body>
+</html>

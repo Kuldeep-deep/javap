@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class MatrixMultiplicationThread extends Thread {
+        int[][] matrixA, matrixB, result;
+        int row, column, size;
+    
+        public MatrixMultiplicationThread(int[][] matrixA, int[][] matrixB, int[][] result, int row, int column, int size) {
+            this.matrixA = matrixA;
+            this.matrixB = matrixB;
+            this.result = result;
+            this.row = row;
+            this.column = column;
+            this.size = size;
+        }
+    
+        public void run() {
+            for (int i = 0; i < size; i++) {
+                result[row][column] += matrixA[row][i] * matrixB[i][column];
+            }
+        }
+    }
+    
+    public class MatrixMultiplication {
+        public static void main(String[] args) {
+            int[][] matrixA = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            };
+    
+            int[][] matrixB = {
+                {9, 8, 7},
+                {6, 5, 4},
+                {3, 2, 1}
+            };
+    
+            int rows = matrixA.length;
+            int columns = matrixB[0].length;
+            int[][] result = new int[rows][columns];
+    
+            Thread[][] threads = new Thread[rows][columns];
+    
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    threads[i][j] = new MatrixMultiplicationThread(matrixA, matrixB, result, i, j, matrixA[0].length);
+                    threads[i][j].start();
+                }
+            }
+    
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    try {
+                        threads[i][j].join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+    
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.print(result[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    30 24 18 
+    84 69 54 
+    138 114 90 
+     
+
+</pre>
+</body>
+</html>

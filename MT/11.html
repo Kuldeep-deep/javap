@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class BankAccount {
+        private int balance = 1000;
+    
+        public synchronized void withdraw(int amount) {
+            if (balance >= amount) {
+                System.out.println(Thread.currentThread().getName() + " is withdrawing: " + amount);
+                balance -= amount;
+                System.out.println("New balance after " + Thread.currentThread().getName() + " withdrawal: " + balance);
+            } else {
+                System.out.println("Insufficient balance for " + Thread.currentThread().getName() + " to withdraw " + amount);
+            }
+        }
+    
+        public int getBalance() {
+            return balance;
+        }
+    }
+    
+    class AccountHolder extends Thread {
+        private BankAccount account;
+        private int amountToWithdraw;
+    
+        public AccountHolder(BankAccount account, String name, int amountToWithdraw) {
+            super(name);
+            this.account = account;
+            this.amountToWithdraw = amountToWithdraw;
+        }
+    
+        @Override
+        public void run() {
+            account.withdraw(amountToWithdraw);
+        }
+    }
+    
+    public class SynchronizedExample {
+        public static void main(String[] args) {
+            BankAccount account = new BankAccount();
+    
+            AccountHolder holder1 = new AccountHolder(account, "Thread-1", 500);
+            AccountHolder holder2 = new AccountHolder(account, "Thread-2", 700);
+    
+            holder1.start();
+            holder2.start();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Thread-1 is withdrawing: 500
+    New balance after Thread-1 withdrawal: 500
+    Thread-2 is withdrawing: 700
+    Insufficient balance for Thread-2 to withdraw 700
+     
+
+</pre>
+</body>
+</html>

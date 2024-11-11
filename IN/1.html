@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Animal {
+        public void makeSound() {
+            System.out.println("Animal makes a sound.");
+        }
+    }
+    
+    class Cat extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Cat meows.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Animal myAnimal = new Animal();
+            myAnimal.makeSound();
+    
+            Animal myCat = new Cat();
+            myCat.makeSound();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Animal makes a sound.
+Cat meows.
+
+
+</pre>
+</body>
+</html>

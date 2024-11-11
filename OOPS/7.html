@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    class Account {
+        String accountHolder;
+        double balance;
+    
+        public Account(String accountHolder, double balance) {
+            this.accountHolder = accountHolder;
+            this.balance = balance;
+        }
+    
+        public void deposit(double amount) {
+            balance += amount;
+        }
+    
+        public void withdraw(double amount) {
+            if (amount <= balance) {
+                balance -= amount;
+            } else {
+                System.out.println("Insufficient balance");
+            }
+        }
+    
+        public void display() {
+            System.out.println("Account Holder: " + accountHolder + ", Balance: $" + balance);
+        }
+    }
+    
+    public class Bank {
+        ArrayList<Account> accounts = new ArrayList<>();
+    
+        public void addAccount(Account account) {
+            accounts.add(account);
+        }
+    
+        public void removeAccount(Account account) {
+            accounts.remove(account);
+        }
+    
+        public void displayAccounts() {
+            accounts.forEach(Account::display);
+        }
+    
+        public static void main(String[] args) {
+            Bank bank = new Bank();
+            Account acc1 = new Account("Alice", 1000);
+            Account acc2 = new Account("Bob", 1500);
+    
+            bank.addAccount(acc1);
+            bank.addAccount(acc2);
+            bank.displayAccounts();
+    
+            acc1.deposit(500);
+            acc2.withdraw(700);
+    
+            System.out.println("\nAfter transactions:");
+            bank.displayAccounts();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Account Holder: Alice, Balance: $1000.0
+    Account Holder: Bob, Balance: $1500.0
+    
+    After transactions:
+    Account Holder: Alice, Balance: $1500.0
+    Account Holder: Bob, Balance: $800.0
+       
+
+</pre>
+</body>
+</html>

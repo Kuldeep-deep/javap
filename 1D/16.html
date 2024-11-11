@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Arrays;
+    import java.util.Scanner;
+    
+    public class ThirdLargestNumber {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of elements in the array: ");
+            int n = scanner.nextInt();
+    
+            int[] arr = new int[n];
+    
+            System.out.println("Enter " + n + " elements:");
+            for (int i = 0; i < n; i++) {
+                arr[i] = scanner.nextInt();
+            }
+    
+            Arrays.sort(arr);
+            
+            if (n < 3) {
+                System.out.println("Array must contain at least 3 elements.");
+            } else {
+                System.out.println("The 3rd largest number is: " + arr[n - 3]);
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of elements in the array: 5
+    Enter 5 elements:
+    10
+    20
+    30
+    40
+    50
+    The 3rd largest number is: 30
+        
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    public class Book {
+        String title;
+        String author;
+        String isbn;
+    
+        public Book(String title, String author, String isbn) {
+            this.title = title;
+            this.author = author;
+            this.isbn = isbn;
+        }
+    
+        public void display() {
+            System.out.println("Title: " + title + ", Author: " + author + ", ISBN: " + isbn);
+        }
+    
+        public static void main(String[] args) {
+            ArrayList<Book> library = new ArrayList<>();
+            Book book1 = new Book("Java Programming", "Author A", "12345");
+            Book book2 = new Book("Python Programming", "Author B", "67890");
+    
+            library.add(book1);
+            library.add(book2);
+            
+            library.forEach(Book::display);
+            
+            library.remove(book1);
+            System.out.println("\nAfter removing a book:");
+            library.forEach(Book::display);
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Title: Java Programming, Author: Author A, ISBN: 12345
+    Title: Python Programming, Author: Author B, ISBN: 67890
+    
+    After removing a book:
+    Title: Python Programming, Author: Author B, ISBN: 67890
+      
+
+</pre>
+</body>
+</html>

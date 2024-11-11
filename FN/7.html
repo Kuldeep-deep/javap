@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class PasswordValidator {
+    
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter a password to check: ");
+            String password = scanner.nextLine();
+    
+            if (isValidPassword(password)) {
+                System.out.println("The password is valid.");
+            } else {
+                System.out.println("The password is invalid.");
+            }
+    
+            scanner.close();
+        }
+    
+        public static boolean isValidPassword(String password) {
+            if (password.length() < 8) {
+                return false;
+            }
+    
+            boolean hasUppercase = false;
+            boolean hasLowercase = false;
+            boolean hasDigit = false;
+            boolean hasSpecialChar = false;
+    
+            for (char ch : password.toCharArray()) {
+                if (Character.isUpperCase(ch)) {
+                    hasUppercase = true;
+                } else if (Character.isLowerCase(ch)) {
+                    hasLowercase = true;
+                } else if (Character.isDigit(ch)) {
+                    hasDigit = true;
+                } else if (!Character.isLetterOrDigit(ch)) {
+                    hasSpecialChar = true;
+                }
+    
+                if (hasUppercase && hasLowercase && hasDigit && hasSpecialChar) {
+                    return true;
+                }
+            }
+    
+            return false;
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter a password to check: Secure#2021
+    The password is valid.
+        
+
+</pre>
+</body>
+</html>

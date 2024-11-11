@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class CustomThread extends Thread {
+        public CustomThread(String name, int priority) {
+            setName(name);
+            setPriority(priority);
+        }
+    
+        @Override
+        public void run() {
+            for (int i = 1; i <= 3; i++) {
+                System.out.println(getName() + " [Priority: " + getPriority() + "] - Running iteration " + i);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    System.out.println(getName() + " interrupted: " + e.getMessage());
+                }
+            }
+            System.out.println(getName() + " has completed execution.");
+        }
+    }
+    
+    public class ThreadPriorityExample {
+        public static void main(String[] args) {
+            CustomThread thread1 = new CustomThread("High Priority Thread", Thread.MAX_PRIORITY);
+            CustomThread thread2 = new CustomThread("Medium Priority Thread", Thread.NORM_PRIORITY);
+            CustomThread thread3 = new CustomThread("Low Priority Thread", Thread.MIN_PRIORITY);
+    
+            thread1.start();
+            thread2.start();
+            thread3.start();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    High Priority Thread [Priority: 10] - Running iteration 1
+    Medium Priority Thread [Priority: 5] - Running iteration 1
+    Low Priority Thread [Priority: 1] - Running iteration 1
+    High Priority Thread [Priority: 10] - Running iteration 2
+    Medium Priority Thread [Priority: 5] - Running iteration 2
+    Low Priority Thread [Priority: 1] - Running iteration 2
+    High Priority Thread has completed execution.
+    Medium Priority Thread has completed execution.
+    Low Priority Thread has completed execution.
+       
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Employee {
+        public void work() {
+            System.out.println("Employee is working.");
+        }
+    
+        public double getSalary() {
+            return 30000;
+        }
+    }
+    
+    class HRManager extends Employee {
+        @Override
+        public void work() {
+            System.out.println("HR Manager is managing employees.");
+        }
+    
+        public void addEmployee() {
+            System.out.println("Adding a new employee to the system.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            HRManager hr = new HRManager();
+            hr.work();
+            hr.addEmployee();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    HR Manager is managing employees.
+    Adding a new employee to the system.
+      
+
+</pre>
+</body>
+</html>

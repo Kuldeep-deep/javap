@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.HashMap;
+
+    public class Inventory {
+        HashMap<String, Integer> products = new HashMap<>();
+    
+        public void addProduct(String product, int quantity) {
+            products.put(product, quantity);
+        }
+    
+        public void removeProduct(String product) {
+            products.remove(product);
+        }
+    
+        public void checkLowInventory() {
+            products.forEach((product, quantity) -> {
+                if (quantity < 5) {
+                    System.out.println("Low inventory for: " + product);
+                }
+            });
+        }
+    
+        public void displayInventory() {
+            products.forEach((product, quantity) -> {
+                System.out.println("Product: " + product + ", Quantity: " + quantity);
+            });
+        }
+    
+        public static void main(String[] args) {
+            Inventory inventory = new Inventory();
+            inventory.addProduct("Laptop", 3);
+            inventory.addProduct("Mouse", 10);
+            inventory.addProduct("Keyboard", 2);
+    
+            inventory.displayInventory();
+            inventory.checkLowInventory();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Product: Laptop, Quantity: 3
+    Product: Mouse, Quantity: 10
+    Product: Keyboard, Quantity: 2
+    Low inventory for: Laptop
+    Low inventory for: Keyboard
+       
+
+</pre>
+</body>
+</html>

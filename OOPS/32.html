@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    class Student {
+        private int studentId;
+        private String studentName;
+        private ArrayList<Integer> grades = new ArrayList<>();
+    
+        public int getStudentId() {
+            return studentId;
+        }
+    
+        public void setStudentId(int studentId) {
+            this.studentId = studentId;
+        }
+    
+        public String getStudentName() {
+            return studentName;
+        }
+    
+        public void setStudentName(String studentName) {
+            this.studentName = studentName;
+        }
+    
+        public void addGrade(int grade) {
+            if (grade >= 0 && grade <= 100) {
+                grades.add(grade);
+            } else {
+                System.out.println("Invalid grade. Please enter a grade between 0 and 100.");
+            }
+        }
+    
+        public void displayGrades() {
+            System.out.println("Grades: " + grades);
+        }
+    
+        public static void main(String[] args) {
+            Student student = new Student();
+            student.setStudentId(123);
+            student.setStudentName("Alice");
+            student.addGrade(95);
+            student.addGrade(88);
+            student.addGrade(102);
+            student.displayGrades();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Invalid grade. Please enter a grade between 0 and 100.
+Grades: [95, 88]
+
+
+</pre>
+</body>
+</html>

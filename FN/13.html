@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class VowelChecker {
+
+        public static void main(String[] args) {
+            System.out.println(areAllVowels("aeiou"));
+            System.out.println(areAllVowels("aeeio")); 
+            System.out.println(areAllVowels("hello"));
+            System.out.println(areAllVowels("AEIOU")); 
+        }
+    
+        public static boolean areAllVowels(String str) {
+            str = str.toLowerCase();
+            for (int i = 0; i < str.length(); i++) {
+                char ch = str.charAt(i);
+                if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+  <h2>OUTPUT</h2>
+  true
+  false
+
+
+</pre>
+</body>
+</html>

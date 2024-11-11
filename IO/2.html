@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.io.*;
+
+    public class StringInput {
+        public static void main(String[] args) {
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    
+                System.out.print("Enter a string: ");
+                String inputString = reader.readLine();
+                System.out.println("You entered: " + inputString);
+            } catch (IOException e) {
+                System.out.println("An error occurred: " + e.getMessage());
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter a string: Hello, World!
+    You entered: Hello, World!
+       
+
+</pre>
+</body>
+</html>

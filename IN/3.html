@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Shape {
+        public double getArea() {
+            return 0;
+        }
+    }
+    
+    class Rectangle extends Shape {
+        private double length;
+        private double width;
+    
+        public Rectangle(double length, double width) {
+            this.length = length;
+            this.width = width;
+        }
+    
+        @Override
+        public double getArea() {
+            return length * width;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Rectangle rectangle = new Rectangle(5, 10);
+            System.out.println("Area of the rectangle: " + rectangle.getArea());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Area of the rectangle: 50.0
+
+
+</pre>
+</body>
+</html>

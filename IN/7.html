@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Person {
+        public String getFirstName() {
+            return "John";
+        }
+    
+        public String getLastName() {
+            return "Doe";
+        }
+    }
+    
+    class Employee extends Person {
+        private String jobTitle = "Software Engineer";
+        private int employeeId = 12345;
+    
+        public int getEmployeeId() {
+            return employeeId;
+        }
+    
+        @Override
+        public String getLastName() {
+            return super.getLastName() + ", " + jobTitle;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Employee emp = new Employee();
+            System.out.println("Employee Name: " + emp.getFirstName() + " " + emp.getLastName());
+            System.out.println("Employee ID: " + emp.getEmployeeId());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Employee Name: John Doe, Software Engineer
+    Employee ID: 12345
+      
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class BankAccount {
+        private double balance;
+    
+        public BankAccount(double initialBalance) {
+            this.balance = initialBalance;
+        }
+    
+        public synchronized void deposit(double amount) {
+            if (amount > 0) {
+                balance += amount;
+                System.out.println(Thread.currentThread().getName() + " deposited: " + amount + " | New Balance: " + balance);
+            }
+        }
+    
+        public synchronized void withdraw(double amount) {
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                System.out.println(Thread.currentThread().getName() + " withdrew: " + amount + " | New Balance: " + balance);
+            } else {
+                System.out.println(Thread.currentThread().getName() + " failed to withdraw: " + amount + " | Insufficient funds");
+            }
+        }
+    
+        public double getBalance() {
+            return balance;
+        }
+    }
+    
+    class DepositTask implements Runnable {
+        private final BankAccount account;
+        private final double amount;
+    
+        public DepositTask(BankAccount account, double amount) {
+            this.account = account;
+            this.amount = amount;
+        }
+    
+        @Override
+        public void run() {
+            account.deposit(amount);
+        }
+    }
+    
+    class WithdrawTask implements Runnable {
+        private final BankAccount account;
+        private final double amount;
+    
+        public WithdrawTask(BankAccount account, double amount) {
+            this.account = account;
+            this.amount = amount;
+        }
+    
+        @Override
+        public void run() {
+            account.withdraw(amount);
+        }
+    }
+    
+    public class BankAccountDemo {
+        public static void main(String[] args) {
+            BankAccount account = new BankAccount(1000.00);
+    
+            Thread depositThread1 = new Thread(new DepositTask(account, 300.00), "DepositThread1");
+            Thread depositThread2 = new Thread(new DepositTask(account, 200.00), "DepositThread2");
+            Thread withdrawThread1 = new Thread(new WithdrawTask(account, 150.00), "WithdrawThread1");
+            Thread withdrawThread2 = new Thread(new WithdrawTask(account, 500.00), "WithdrawThread2");
+    
+            depositThread1.start();
+            depositThread2.start();
+            withdrawThread1.start();
+            withdrawThread2.start();
+    
+            try {
+                depositThread1.join();
+                depositThread2.join();
+                withdrawThread1.join();
+                withdrawThread2.join();
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted: " + e.getMessage());
+            }
+    
+            System.out.println("Final Balance: " + account.getBalance());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    DepositThread1 deposited: 300.0 | New Balance: 1300.0
+    DepositThread2 deposited: 200.0 | New Balance: 1500.0
+    WithdrawThread1 withdrew: 150.0 | New Balance: 1350.0
+    WithdrawThread2 withdrew: 500.0 | New Balance: 850.0
+    Final Balance: 850.0
+       
+
+</pre>
+</body>
+</html>

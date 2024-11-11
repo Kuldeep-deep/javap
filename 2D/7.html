@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class UpperTriangularMatrix {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of rows for the matrix: ");
+            int rows = scanner.nextInt();
+            System.out.print("Enter the number of columns for the matrix: ");
+            int columns = scanner.nextInt();
+    
+            if (rows != columns) {
+                System.out.println("The matrix must be square (same number of rows and columns) to display a triangular form.");
+                return;
+            }
+    
+            int[][] matrix = new int[rows][columns];
+    
+            System.out.println("Enter elements of the matrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.printf("Element [%d][%d]: ", i, j);
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            System.out.println("Upper Triangular Matrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    if (i <= j) {
+                        System.out.print(matrix[i][j] + " ");
+                    } else {
+                        System.out.print("0 ");
+                    }
+                }
+                System.out.println();
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of rows for the matrix: 3
+Enter the number of columns for the matrix: 3
+Enter elements of the matrix:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 3
+Element [1][0]: 4
+Element [1][1]: 5
+Element [1][2]: 6
+Element [2][0]: 7
+Element [2][1]: 8
+Element [2][2]: 9
+Upper Triangular Matrix:
+1 2 3 
+0 5 6 
+0 0 9 
+
+
+</pre>
+</body>
+</html>

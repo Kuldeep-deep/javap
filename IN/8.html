@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Shape {
+        public double getPerimeter() {
+            return 0;
+        }
+    
+        public double getArea() {
+            return 0;
+        }
+    }
+    
+    class Circle extends Shape {
+        private double radius;
+    
+        public Circle(double radius) {
+            this.radius = radius;
+        }
+    
+        @Override
+        public double getPerimeter() {
+            return 2 * Math.PI * radius;
+        }
+    
+        @Override
+        public double getArea() {
+            return Math.PI * radius * radius;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Circle circle = new Circle(5);
+            System.out.println("Perimeter of the circle: " + circle.getPerimeter());
+            System.out.println("Area of the circle: " + circle.getArea());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Perimeter of the circle: 31.41592653589793
+    Area of the circle: 78.53981633974483
+      
+
+</pre>
+</body>
+</html>

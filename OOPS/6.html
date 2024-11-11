@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class Employee {
+        String name;
+        String jobTitle;
+        double salary;
+    
+        public Employee(String name, String jobTitle, double salary) {
+            this.name = name;
+            this.jobTitle = jobTitle;
+            this.salary = salary;
+        }
+    
+        public void updateSalary(double percent) {
+            salary += salary * (percent / 100);
+        }
+    
+        public void display() {
+            System.out.println("Name: " + name + ", Job Title: " + jobTitle + ", Salary: $" + salary);
+        }
+    
+        public static void main(String[] args) {
+            Employee emp = new Employee("Alice", "Developer", 50000);
+            emp.display();
+            emp.updateSalary(10);
+            System.out.println("\nAfter salary update:");
+            emp.display();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Name: Alice, Job Title: Developer, Salary: $50000.0
+
+    After salary update:
+    Name: Alice, Job Title: Developer, Salary: $55000.0
+       
+
+</pre>
+</body>
+</html>

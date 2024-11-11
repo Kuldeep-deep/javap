@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class RightRotateArray {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of elements in the array: ");
+            int n = scanner.nextInt();
+    
+            int[] arr = new int[n];
+    
+            System.out.println("Enter " + n + " elements:");
+            for (int i = 0; i < n; i++) {
+                arr[i] = scanner.nextInt();
+            }
+    
+            System.out.print("Enter the number of positions to right rotate: ");
+            int d = scanner.nextInt();
+    
+            d = d % n; // In case the number of rotations is greater than the array length
+    
+            int[] rotatedArray = new int[n];
+            for (int i = 0; i < n; i++) {
+                rotatedArray[(i + d) % n] = arr[i];
+            }
+    
+            System.out.println("Array after right rotation:");
+            for (int i = 0; i < n; i++) {
+                System.out.print(rotatedArray[i] + " ");
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of elements in the array: 5
+    Enter 5 elements:
+    10
+    20
+    30
+    40
+    50
+    Enter the number of positions to right rotate: 2
+    Array after right rotation:
+    40 50 10 20 30 
+        
+
+</pre>
+</body>
+</html>

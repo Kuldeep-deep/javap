@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.io.File;
+    import java.io.FileNotFoundException;
+    import java.util.Scanner;
+    
+    public class PositiveNumberExceptionExample {
+    
+        public static void checkForPositiveNumbers(String fileName) throws Exception {
+            File file = new File(fileName);
+            Scanner scanner = new Scanner(file);
+    
+            while (scanner.hasNext()) {
+                int number = scanner.nextInt();
+                if (number > 0) {
+                    throw new Exception("Positive number found: " + number);
+                }
+            }
+            scanner.close();
+        }
+    
+        public static void main(String[] args) {
+            String fileName = "numbers.txt";
+            
+            try {
+                checkForPositiveNumbers(fileName);
+                System.out.println("No positive numbers found in the file.");
+            } catch (Exception e) {
+                System.out.println("Exception caught: " + e.getMessage());
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    file content
+    -3
+-5
+7
+-8
+-1
+Exception caught: Positive number found: 7
+
+
+</pre>
+</body>
+</html>

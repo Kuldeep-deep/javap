@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class TwinPrimes {
+
+        public static void main(String[] args) {
+            findTwinPrimes(100);
+        }
+    
+        public static void findTwinPrimes(int limit) {
+            for (int i = 2; i <= limit - 2; i++) {
+                if (isPrime(i) && isPrime(i + 2)) {
+                    System.out.println("(" + i + ", " + (i + 2) + ")");
+                }
+            }
+        }
+    
+        public static boolean isPrime(int num) {
+            if (num <= 1) return false;
+            for (int i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) return false;
+            }
+            return true;
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    (3, 5)
+    (5, 7)
+    (11, 13)
+    (17, 19)
+    (29, 31)
+    (41, 43)
+    (59, 61)
+    (71, 73)
+        
+
+</pre>
+</body>
+</html>

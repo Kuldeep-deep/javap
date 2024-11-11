@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    class Book {
+        String title;
+        String author;
+    
+        public Book(String title, String author) {
+            this.title = title;
+            this.author = author;
+        }
+    
+        public void display() {
+            System.out.println("Title: " + title + ", Author: " + author);
+        }
+    }
+    
+    public class Library {
+        ArrayList<Book> books = new ArrayList<>();
+    
+        public void addBook(Book book) {
+            books.add(book);
+        }
+    
+        public void removeBook(Book book) {
+            books.remove(book);
+        }
+    
+        public void displayBooks() {
+            books.forEach(Book::display);
+        }
+    
+        public static void main(String[] args) {
+            Library library = new Library();
+            Book b1 = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+            Book b2 = new Book("1984", "George Orwell");
+    
+            library.addBook(b1);
+            library.addBook(b2);
+            library.displayBooks();
+    
+            library.removeBook(b1);
+            System.out.println("\nAfter removing a book:");
+            library.displayBooks();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Title: The Great Gatsby, Author: F. Scott Fitzgerald
+    Title: 1984, Author: George Orwell
+    
+    After removing a book:
+    Title: 1984, Author: George Orwell
+       
+
+</pre>
+</body>
+</html>

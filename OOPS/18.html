@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+    import java.util.HashMap;
+    
+    class Restaurant {
+        HashMap<String, Double> menu = new HashMap<>();
+        ArrayList<Integer> ratings = new ArrayList<>();
+    
+        public void addMenuItem(String item, double price) {
+            menu.put(item, price);
+        }
+    
+        public void removeMenuItem(String item) {
+            menu.remove(item);
+        }
+    
+        public void addRating(int rating) {
+            ratings.add(rating);
+        }
+    
+        public double calculateAverageRating() {
+            return ratings.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+        }
+    
+        public void displayMenu() {
+            System.out.println("Menu:");
+            menu.forEach((item, price) -> System.out.println(item + ": $" + price));
+        }
+    
+        public static void main(String[] args) {
+            Restaurant restaurant = new Restaurant();
+            restaurant.addMenuItem("Burger", 5.99);
+            restaurant.addMenuItem("Fries", 2.99);
+            restaurant.addRating(5);
+            restaurant.addRating(4);
+    
+            restaurant.displayMenu();
+            System.out.println("Average Rating: " + restaurant.calculateAverageRating());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Menu:
+Burger: $5.99
+Fries: $2.99
+Average Rating: 4.5
+
+
+</pre>
+</body>
+</html>

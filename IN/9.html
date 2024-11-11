@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Vehicle {
+        String make, model, fuelType;
+        int year;
+    
+        public Vehicle(String make, String model, int year, String fuelType) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.fuelType = fuelType;
+        }
+    
+        public double calculateFuelEfficiency() {
+            return 0;
+        }
+    
+        public double maxSpeed() {
+            return 0;
+        }
+    }
+    
+    class Car extends Vehicle {
+        public Car(String make, String model, int year, String fuelType) {
+            super(make, model, year, fuelType);
+        }
+    
+        @Override
+        public double calculateFuelEfficiency() {
+            return 25;  // Example value
+        }
+    
+        @Override
+        public double maxSpeed() {
+            return 200; // Example value
+        }
+    }
+    
+    class Truck extends Vehicle {
+        public Truck(String make, String model, int year, String fuelType) {
+            super(make, model, year, fuelType);
+        }
+    
+        @Override
+        public double calculateFuelEfficiency() {
+            return 10;  // Example value
+        }
+    
+        @Override
+        public double maxSpeed() {
+            return 150; // Example value
+        }
+    }
+    
+    class Motorcycle extends Vehicle {
+        public Motorcycle(String make, String model, int year, String fuelType) {
+            super(make, model, year, fuelType);
+        }
+    
+        @Override
+        public double calculateFuelEfficiency() {
+            return 40;  // Example value
+        }
+    
+        @Override
+        public double maxSpeed() {
+            return 180; // Example value
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Car car = new Car("Toyota", "Corolla", 2022, "Petrol");
+            System.out.println("Car Fuel Efficiency: " + car.calculateFuelEfficiency() + " MPG");
+            System.out.println("Car Max Speed: " + car.maxSpeed() + " km/h");
+    
+            Truck truck = new Truck("Ford", "F-150", 2020, "Diesel");
+            System.out.println("Truck Fuel Efficiency: " + truck.calculateFuelEfficiency() + " MPG");
+            System.out.println("Truck Max Speed: " + truck.maxSpeed() + " km/h");
+    
+            Motorcycle motorcycle = new Motorcycle("Harley", "Sportster", 2021, "Petrol");
+            System.out.println("Motorcycle Fuel Efficiency: " + motorcycle.calculateFuelEfficiency() + " MPG");
+            System.out.println("Motorcycle Max Speed: " + motorcycle.maxSpeed() + " km/h");
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Car Fuel Efficiency: 25.0 MPG
+Car Max Speed: 200.0 km/h
+Truck Fuel Efficiency: 10.0 MPG
+Truck Max Speed: 150.0 km/h
+Motorcycle Fuel Efficiency: 40.0 MPG
+Motorcycle Max Speed: 180.0 km/h
+
+
+</pre>
+</body>
+</html>
+

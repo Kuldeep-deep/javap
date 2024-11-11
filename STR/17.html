@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class StringRotation {
+        public static boolean isRotation(String s1, String s2) {
+            return (s1.length() == s2.length() && (s1 + s1).contains(s2));
+        }
+    
+        public static void main(String[] args) {
+            String s1 = "abcde";
+            String s2 = "cdeab";
+            System.out.println(isRotation(s1, s2));
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    true
+
+
+</pre>
+</body>
+</html>

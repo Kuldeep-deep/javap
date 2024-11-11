@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    abstract class BankAccount {
+        abstract void deposit(double amount);
+        abstract void withdraw(double amount);
+    }
+    
+    class SavingsAccount extends BankAccount {
+        double balance;
+    
+        @Override
+        void deposit(double amount) {
+            balance += amount;
+        }
+    
+        @Override
+        void withdraw(double amount) {
+            if (balance - amount >= 100) {
+                balance -= amount;
+            } else {
+                System.out.println("Insufficient balance.");
+            }
+        }
+    }
+    
+    class CurrentAccount extends BankAccount {
+        double balance;
+    
+        @Override
+        void deposit(double amount) {
+            balance += amount;
+        }
+    
+        @Override
+        void withdraw(double amount) {
+            balance -= amount;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            BankAccount savings = new SavingsAccount();
+            savings.deposit(500);
+            savings.withdraw(450);
+    
+            BankAccount current = new CurrentAccount();
+            current.deposit(300);
+            current.withdraw(200);
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Insufficient balance.
+
+
+</pre>
+</body>
+</html>

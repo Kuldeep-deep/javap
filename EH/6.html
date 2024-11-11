@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+    import java.util.HashSet;
+    
+    public class DuplicateNumberException {
+    
+        public static void checkForDuplicates(int[] numbers) throws Exception {
+            HashSet<Integer> uniqueNumbers = new HashSet<>();
+            
+            for (int number : numbers) {
+                if (!uniqueNumbers.add(number)) {
+                    throw new Exception("Duplicate number found: " + number);
+                }
+            }
+        }
+    
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("Enter the number of integers you want to input:");
+            int n = scanner.nextInt();
+            
+            int[] numbers = new int[n];
+            
+            System.out.println("Enter the integers:");
+            for (int i = 0; i < n; i++) {
+                numbers[i] = scanner.nextInt();
+            }
+    
+            try {
+                checkForDuplicates(numbers);
+                System.out.println("No duplicates found.");
+            } catch (Exception e) {
+                System.out.println("Exception caught: " + e.getMessage());
+            }
+            
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of integers you want to input:
+5
+Enter the integers:
+1 2 3 4 2
+Exception caught: Duplicate number found: 2
+
+
+</pre>
+</body>
+</html>

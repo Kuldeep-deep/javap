@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class StringPermutations {
+        public static void permute(String str, String result) {
+            if (str.length() == 0) {
+                System.out.println(result);
+            } else {
+                for (int i = 0; i < str.length(); i++) {
+                    permute(str.substring(0, i) + str.substring(i + 1), result + str.charAt(i));
+                }
+            }
+        }
+    
+        public static void main(String[] args) {
+            String str = "ABC";
+            permute(str, "");
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    ABC
+ACB
+BAC
+BCA
+CAB
+CBA
+
+
+</pre>
+</body>
+</html>

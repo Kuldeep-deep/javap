@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class MatrixEquality {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of rows for the matrices: ");
+            int rows = scanner.nextInt();
+            System.out.print("Enter the number of columns for the matrices: ");
+            int columns = scanner.nextInt();
+    
+            int[][] matrix1 = new int[rows][columns];
+            int[][] matrix2 = new int[rows][columns];
+    
+            System.out.println("Enter elements for Matrix 1:");
+            fillMatrix(scanner, matrix1);
+    
+            System.out.println("Enter elements for Matrix 2:");
+            fillMatrix(scanner, matrix2);
+    
+            boolean areEqual = areMatricesEqual(matrix1, matrix2);
+    
+            if (areEqual) {
+                System.out.println("The matrices are equal.");
+            } else {
+                System.out.println("The matrices are not equal.");
+            }
+    
+            scanner.close();
+        }
+    
+        public static void fillMatrix(Scanner scanner, int[][] matrix) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    System.out.printf("Element [%d][%d]: ", i, j);
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+        }
+    
+        public static boolean areMatricesEqual(int[][] matrix1, int[][] matrix2) {
+            if (matrix1.length != matrix2.length) {
+                return false;
+            }
+    
+            for (int i = 0; i < matrix1.length; i++) {
+                if (matrix1[i].length != matrix2[i].length) {
+                    return false;
+                }
+    
+                for (int j = 0; j < matrix1[i].length; j++) {
+                    if (matrix1[i][j] != matrix2[i][j]) {
+                        return false;
+                    }
+                }
+            }
+    
+            return true;
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of rows for the matrices: 2
+Enter the number of columns for the matrices: 3
+Enter elements for Matrix 1:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 3
+Element [1][0]: 4
+Element [1][1]: 5
+Element [1][2]: 6
+Enter elements for Matrix 2:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 3
+Element [1][0]: 4
+Element [1][1]: 5
+Element [1][2]: 6
+The matrices are equal.
+
+
+</pre>
+</body>
+</html>

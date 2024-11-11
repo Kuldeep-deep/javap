@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.time.LocalTime;
+
+    public class Airplane {
+        String flightNumber;
+        String destination;
+        LocalTime departureTime;
+        boolean delayed;
+    
+        public Airplane(String flightNumber, String destination, LocalTime departureTime, boolean delayed) {
+            this.flightNumber = flightNumber;
+            this.destination = destination;
+            this.departureTime = departureTime;
+            this.delayed = delayed;
+        }
+    
+        public void checkFlightStatus() {
+            if (delayed) {
+                System.out.println("Flight " + flightNumber + " is delayed.");
+            } else {
+                System.out.println("Flight " + flightNumber + " is on time.");
+            }
+        }
+    
+        public static void main(String[] args) {
+            Airplane flight = new Airplane("BA2490", "New York", LocalTime.of(10, 30), false);
+            flight.checkFlightStatus();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Flight BA2490 is on time.
+    
+
+</pre>
+</body>
+</html>

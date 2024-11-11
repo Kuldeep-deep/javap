@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Arrays;
+
+    public class CheckAnagram {
+        public static boolean isAnagram(String str1, String str2) {
+            char[] arr1 = str1.toCharArray();
+            char[] arr2 = str2.toCharArray();
+            Arrays.sort(arr1);
+            Arrays.sort(arr2);
+            return Arrays.equals(arr1, arr2);
+        }
+    
+        public static void main(String[] args) {
+            String str1 = "listen";
+            String str2 = "silent";
+            System.out.println(isAnagram(str1, str2));
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    true
+
+
+</pre>
+</body>
+</html>

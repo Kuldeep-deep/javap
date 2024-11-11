@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    abstract class Animal {
+        abstract void sound();
+    }
+    
+    class Lion extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Lion roars");
+        }
+    }
+    
+    class Tiger extends Animal {
+        @Override
+        void sound() {
+            System.out.println("Tiger growls");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Animal lion = new Lion();
+            lion.sound();
+    
+            Animal tiger = new Tiger();
+            tiger.sound();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Lion roars
+    Tiger growls
+      
+
+</pre>
+</body>
+</html>

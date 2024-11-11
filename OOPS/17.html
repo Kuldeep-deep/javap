@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    class Movie {
+        String title;
+        String director;
+        ArrayList<String> actors = new ArrayList<>();
+        ArrayList<String> reviews = new ArrayList<>();
+    
+        public Movie(String title, String director) {
+            this.title = title;
+            this.director = director;
+        }
+    
+        public void addActor(String actor) {
+            actors.add(actor);
+        }
+    
+        public void addReview(String review) {
+            reviews.add(review);
+        }
+    
+        public void displayInfo() {
+            System.out.println("Title: " + title);
+            System.out.println("Director: " + director);
+            System.out.println("Actors: " + actors);
+            System.out.println("Reviews: " + reviews);
+        }
+    
+        public static void main(String[] args) {
+            Movie movie = new Movie("Inception", "Christopher Nolan");
+            movie.addActor("Leonardo DiCaprio");
+            movie.addActor("Joseph Gordon-Levitt");
+            movie.addReview("Amazing movie!");
+            movie.addReview("Mind-blowing experience!");
+    
+            movie.displayInfo();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Title: Inception
+Director: Christopher Nolan
+Actors: [Leonardo DiCaprio, Joseph Gordon-Levitt]
+Reviews: [Amazing movie!, Mind-blowing experience!]
+
+
+</pre>
+</body>
+</html>

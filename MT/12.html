@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class SharedResource {
+        private boolean conditionMet = false;
+    
+        public synchronized void produce() {
+            while (!conditionMet) {
+                try {
+                    System.out.println(Thread.currentThread().getName() + " is waiting for condition to be met.");
+                    wait();  
+                } catch (InterruptedException e) {
+                    System.out.println(Thread.currentThread().getName() + " interrupted.");
+                }
+            }
+            System.out.println(Thread.currentThread().getName() + " has received the signal to proceed.");
+        }
+    
+        public synchronized void consume() {
+            try {
+                Thread.sleep(1000); // Simulate some work before notifying
+                System.out.println(Thread.currentThread().getName() + " has completed work and is notifying all threads.");
+                conditionMet = true;
+                notifyAll(); 
+            } catch (InterruptedException e) {
+                System.out.println(Thread.currentThread().getName() + " interrupted during sleep.");
+            }
+        }
+    
+        public synchronized void resumeThread() {
+            try {
+                wait(2000); // Wait for 2 seconds, then resume after waiting for a while.
+                System.out.println(Thread.currentThread().getName() + " is resuming its operation.");
+            } catch (InterruptedException e) {
+                System.out.println(Thread.currentThread().getName() + " interrupted during wait.");
+            }
+        }
+    }
+    
+    class Producer extends Thread {
+        SharedResource resource;
+    
+        Producer(SharedResource resource, String name) {
+            super(name);
+            this.resource = resource;
+        }
+    
+        @Override
+        public void run() {
+            resource.produce();
+        }
+    }
+    
+    class Consumer extends Thread {
+        SharedResource resource;
+    
+        Consumer(SharedResource resource, String name) {
+            super(name);
+            this.resource = resource;
+        }
+    
+        @Override
+        public void run() {
+            resource.consume();
+        }
+    }
+    
+    class Resumer extends Thread {
+        SharedResource resource;
+    
+        Resumer(SharedResource resource, String name) {
+            super(name);
+            this.resource = resource;
+        }
+    
+        @Override
+        public void run() {
+            resource.resumeThread();
+        }
+    }
+    
+    public class NotifyNotifyAllWaitExample {
+        public static void main(String[] args) {
+            SharedResource resource = new SharedResource();
+    
+            
+            Producer producer = new Producer(resource, "Producer-Thread");
+            Consumer consumer1 = new Consumer(resource, "Consumer-Thread-1");
+            Consumer consumer2 = new Consumer(resource, "Consumer-Thread-2");
+    
+            
+            Resumer resumer = new Resumer(resource, "Resumer-Thread");
+    
+            producer.start();
+            consumer1.start();
+            consumer2.start();
+            resumer.start();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Producer-Thread is waiting for condition to be met.
+Consumer-Thread-1 is waiting for condition to be met.
+Consumer-Thread-2 is waiting for condition to be met.
+Producer-Thread has received the signal to proceed.
+Consumer-Thread-1 has completed work and is notifying all threads.
+Consumer-Thread-2 has completed work and is notifying all threads.
+Consumer-Thread-1 is resuming its operation.
+
+
+</pre>
+</body>
+</html>

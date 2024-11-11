@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class SmallestNumberFinder {
+        
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.print("Enter the first number: ");
+            int num1 = scanner.nextInt();
+            
+            System.out.print("Enter the second number: ");
+            int num2 = scanner.nextInt();
+            
+            System.out.print("Enter the third number: ");
+            int num3 = scanner.nextInt();
+            
+            int smallest = findSmallest(num1, num2, num3);
+            displayResult(smallest);
+            
+            scanner.close();
+        }
+    
+        public static int findSmallest(int a, int b, int c) {
+            int smallest = a;
+    
+            if (b < smallest) {
+                smallest = b;
+            }
+    
+            if (c < smallest) {
+                smallest = c;
+            }
+    
+            return smallest;
+        }
+    
+        public static void displayResult(int smallest) {
+            System.out.println("The smallest number is: " + smallest);
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the first number: 10
+    Enter the second number: 5
+    Enter the third number: 8
+    The smallest number is: 5
+        
+
+</pre>
+</body>
+</html>

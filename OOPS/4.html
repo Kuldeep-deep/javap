@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class Circle {
+        private double radius;
+    
+        public Circle(double radius) {
+            this.radius = radius;
+        }
+    
+        public double getArea() {
+            return Math.PI * radius * radius;
+        }
+    
+        public double getCircumference() {
+            return 2 * Math.PI * radius;
+        }
+    
+        public static void main(String[] args) {
+            Circle c = new Circle(5);
+            System.out.println("Area: " + c.getArea());
+            System.out.println("Circumference: " + c.getCircumference());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Area: 78.53981633974483
+    Circumference: 31.41592653589793
+       
+
+</pre>
+</body>
+</html>

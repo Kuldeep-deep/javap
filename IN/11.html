@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Animal {
+        String name = "Animal";
+    }
+    
+    class Dog extends Animal {
+        String name = "Dog";
+    
+        public void printName() {
+            System.out.println("Superclass name: " + super.name);
+            System.out.println("Subclass name: " + name);
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Dog dog = new Dog();
+            dog.printName();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Superclass name: Animal
+    Subclass name: Dog
+      
+
+</pre>
+</body>
+</html>

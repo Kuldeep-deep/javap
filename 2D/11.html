@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class IdentityMatrixChecker {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the size of the matrix (n for an n x n matrix): ");
+            int n = scanner.nextInt();
+    
+            int[][] matrix = new int[n][n];
+            
+            System.out.println("Enter elements of the matrix:");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    System.out.printf("Element [%d][%d]: ", i, j);
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            boolean isIdentity = true;
+    
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if ((i == j && matrix[i][j] != 1) || (i != j && matrix[i][j] != 0)) {
+                        isIdentity = false;
+                        break;
+                    }
+                }
+                if (!isIdentity) {
+                    break;
+                }
+            }
+    
+            if (isIdentity) {
+                System.out.println("The given matrix is an identity matrix.");
+            } else {
+                System.out.println("The given matrix is NOT an identity matrix.");
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the size of the matrix (n for an n x n matrix): 3
+Enter elements of the matrix:
+Element [0][0]: 1
+Element [0][1]: 0
+Element [0][2]: 0
+Element [1][0]: 0
+Element [1][1]: 1
+Element [1][2]: 0
+Element [2][0]: 0
+Element [2][1]: 0
+Element [2][2]: 1
+The given matrix is an identity matrix.
+
+
+</pre>
+</body>
+</html>

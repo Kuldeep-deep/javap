@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.awt.*;
+
+    public class BorderLayoutButtons extends Frame {
+        public BorderLayoutButtons() {
+            setLayout(new BorderLayout());
+            add(new Button("North"), BorderLayout.NORTH);
+            add(new Button("South"), BorderLayout.SOUTH);
+            add(new Button("East"), BorderLayout.EAST);
+            add(new Button("West"), BorderLayout.WEST);
+            add(new Button("Center"), BorderLayout.CENTER);
+            setSize(300, 200);
+            setVisible(true);
+        }
+        public static void main(String[] args) {
+            new BorderLayoutButtons();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    <img src="3.jpg">
+
+</pre>
+</body>
+</html>

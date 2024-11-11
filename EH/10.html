@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.sql.Connection;
+    import java.sql.DriverManager;
+    import java.sql.SQLException;
+    import java.sql.Statement;
+    
+    public class DatabaseOperations {
+    
+        public static Connection getConnection(String jdbcDriver, String dbURL, String username, String password) throws SQLException {
+            try {
+                Class.forName(jdbcDriver);
+                return DriverManager.getConnection(dbURL, username, password);
+            } catch (ClassNotFoundException e) {
+                throw new SQLException("JDBC Driver not found: " + e.getMessage());
+            }
+        }
+    
+        public static void executeInsertQuery(Connection connection, String query) throws SQLException {
+            try (Statement statement = connection.createStatement()) {
+                int rowsAffected = statement.executeUpdate(query);
+                if (rowsAffected > 0) {
+                    System.out.println("INSERT operation successful!");
+                } else {
+                    throw new SQLException("INSERT operation failed!");
+                }
+            }
+        }
+    
+        public static void executeDeleteQuery(Connection connection, String query) throws SQLException {
+            try (Statement statement = connection.createStatement()) {
+                int rowsAffected = statement.executeUpdate(query);
+                if (rowsAffected > 0) {
+                    System.out.println("DELETE operation successful!");
+                } else {
+                    throw new SQLException("DELETE operation failed!");
+                }
+            }
+        }
+    
+        public static void executeUpdateQuery(Connection connection, String query) throws SQLException {
+            try (Statement statement = connection.createStatement()) {
+                int rowsAffected = statement.executeUpdate(query);
+                if (rowsAffected > 0) {
+                    System.out.println("UPDATE operation successful!");
+                } else {
+                    throw new SQLException("UPDATE operation failed!");
+                }
+            }
+        }
+    
+        public static void main(String[] args) {
+            String jdbcDriver = "com.mysql.cj.jdbc.Driver";
+            String dbURL = "jdbc:mysql://localhost:3306/your_database";
+            String username = "root";
+            String password = "password";
+    
+            Connection connection = null;
+    
+            try {
+                connection = getConnection(jdbcDriver, dbURL, username, password);
+                System.out.println("Database connected!");
+    
+                String insertQuery = "INSERT INTO your_table (column1, column2) VALUES ('value1', 'value2')";
+                executeInsertQuery(connection, insertQuery);
+    
+                String deleteQuery = "DELETE FROM your_table WHERE column1 = 'value1'";
+                executeDeleteQuery(connection, deleteQuery);
+    
+                String updateQuery = "UPDATE your_table SET column1 = 'new_value' WHERE column2 = 'value2'";
+                executeUpdateQuery(connection, updateQuery);
+    
+            } catch (SQLException e) {
+                System.out.println("Exception caught: " + e.getMessage());
+            } finally {
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                        System.out.println("Connection closed.");
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Exception while closing connection: " + e.getMessage());
+                }
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Database connected!
+INSERT operation successful!
+DELETE operation successful!
+UPDATE operation successful!
+Connection closed.
+
+
+</pre>
+</body>
+</html>

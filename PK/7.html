@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    package employee;
+
+    public class Emp {
+        String name;
+        int empid;
+        String category;
+        double bpay; // Basic pay
+        double hra;  // House Rent Allowance
+        double da;   // Dearness Allowance
+        double npay; // Net Pay
+        double pf;   // Provident Fund
+        double grosspay; // Gross pay
+        double incometax; // Income Tax
+        double allowance; // Other allowances
+    
+        public Emp(String name, int empid, String category, double bpay) {
+            this.name = name;
+            this.empid = empid;
+            this.category = category;
+            this.bpay = bpay;
+        }
+    
+        public void calculateGrossPay() {
+            hra = 0.2 * bpay;
+            da = 0.1 * bpay;
+            allowance = 0.05 * bpay;
+            grosspay = bpay + hra + da + allowance;
+        }
+    
+        public void calculateNetPay() {
+            pf = 0.12 * bpay; // Provident Fund is 12% of basic pay
+            incometax = 0.1 * grosspay; // Income tax is 10% of gross pay
+            npay = grosspay - pf - incometax;
+        }
+    
+        public void printPayrollDetails() {
+            System.out.println("Employee Name: " + name);
+            System.out.println("Employee ID: " + empid);
+            System.out.println("Category: " + category);
+            System.out.println("Basic Pay: " + bpay);
+            System.out.println("House Rent Allowance: " + hra);
+            System.out.println("Dearness Allowance: " + da);
+            System.out.println("Other Allowance: " + allowance);
+            System.out.println("Gross Pay: " + grosspay);
+            System.out.println("Provident Fund: " + pf);
+            System.out.println("Income Tax: " + incometax);
+            System.out.println("Net Pay: " + npay);
+        }
+    }
+----------------------------------------------------------------------------------------------------
+import employee.Emp;
+
+public class Emppay {
+    public static void main(String[] args) {
+        Emp e = new Emp("John Doe", 101, "Manager", 50000);
+        e.calculateGrossPay();
+        e.calculateNetPay();
+        e.printPayrollDetails();
+    }
+}
+
+    
+    <h2>OUTPUT</h2>
+    Employee Name: John Doe
+Employee ID: 101
+Category: Manager
+Basic Pay: 50000.0
+House Rent Allowance: 10000.0
+Dearness Allowance: 5000.0
+Other Allowance: 2500.0
+Gross Pay: 67500.0
+Provident Fund: 6000.0
+Income Tax: 6750.0
+Net Pay: 54750.0
+
+
+</pre>
+</body>
+</html>

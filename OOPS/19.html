@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    class Flight {
+        String flightNumber;
+        String destination;
+    
+        public Flight(String flightNumber, String destination) {
+            this.flightNumber = flightNumber;
+            this.destination = destination;
+        }
+    }
+    
+    class Hotel {
+        String name;
+        String location;
+    
+        public Hotel(String name, String location) {
+            this.name = name;
+            this.location = location;
+        }
+    }
+    
+    class TravelService {
+        ArrayList<Flight> flights = new ArrayList<>();
+        ArrayList<Hotel> hotels = new ArrayList<>();
+    
+        public void addFlight(String flightNumber, String destination) {
+            flights.add(new Flight(flightNumber, destination));
+        }
+    
+        public void addHotel(String name, String location) {
+            hotels.add(new Hotel(name, location));
+        }
+    
+        public Flight searchFlight(String flightNumber) {
+            for (Flight flight : flights) {
+                if (flight.flightNumber.equals(flightNumber)) return flight;
+            }
+            return null;
+        }
+    
+        public Hotel searchHotel(String name) {
+            for (Hotel hotel : hotels) {
+                if (hotel.name.equals(name)) return hotel;
+            }
+            return null;
+        }
+    
+        public void bookFlight(String flightNumber) {
+            Flight flight = searchFlight(flightNumber);
+            if (flight != null) System.out.println("Flight " + flightNumber + " booked to " + flight.destination);
+            else System.out.println("Flight not found.");
+        }
+    
+        public void bookHotel(String name) {
+            Hotel hotel = searchHotel(name);
+            if (hotel != null) System.out.println("Hotel " + name + " booked in " + hotel.location);
+            else System.out.println("Hotel not found.");
+        }
+    
+        public void cancelFlight(String flightNumber) {
+            Flight flight = searchFlight(flightNumber);
+            if (flight != null) System.out.println("Flight " + flightNumber + " canceled.");
+            else System.out.println("Flight not found.");
+        }
+    
+        public void cancelHotel(String name) {
+            Hotel hotel = searchHotel(name);
+            if (hotel != null) System.out.println("Hotel " + name + " canceled.");
+            else System.out.println("Hotel not found.");
+        }
+    
+        public static void main(String[] args) {
+            TravelService service = new TravelService();
+            service.addFlight("A123", "New York");
+            service.addHotel("Grand Hotel", "Paris");
+            service.bookFlight("A123");
+            service.bookHotel("Grand Hotel");
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Flight A123 booked to New York
+Hotel Grand Hotel booked in Paris
+
+
+</pre>
+</body>
+</html>

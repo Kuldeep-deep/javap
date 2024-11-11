@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    abstract class Bird {
+        abstract void fly();
+        abstract void makeSound();
+    }
+    
+    class Eagle extends Bird {
+        @Override
+        void fly() {
+            System.out.println("Eagle soars high.");
+        }
+    
+        @Override
+        void makeSound() {
+            System.out.println("Eagle makes a screeching sound.");
+        }
+    }
+    
+    class Hawk extends Bird {
+        @Override
+        void fly() {
+            System.out.println("Hawk glides swiftly.");
+        }
+    
+        @Override
+        void makeSound() {
+            System.out.println("Hawk makes a sharp call.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Bird eagle = new Eagle();
+            eagle.fly();
+            eagle.makeSound();
+    
+            Bird hawk = new Hawk();
+            hawk.fly();
+            hawk.makeSound();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Eagle soars high.
+Eagle makes a screeching sound.
+Hawk glides swiftly.
+Hawk makes a sharp call.
+
+
+</pre>
+</body>
+</html>

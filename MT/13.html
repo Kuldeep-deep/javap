@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Task implements Runnable {
+        private String name;
+    
+        Task(String name) {
+            this.name = name;
+        }
+    
+        @Override
+        public void run() {
+            System.out.println(name + " is starting.");
+            try {
+                for (int i = 0; i < 5; i++) {
+                    System.out.println(name + " is working. Step " + (i + 1));
+                    Thread.sleep(500);
+                    if (i == 2) {
+                        System.out.println(name + " is yielding control.");
+                        Thread.yield();
+                    }
+                }
+            } catch (InterruptedException e) {
+                System.out.println(name + " was interrupted.");
+            }
+            System.out.println(name + " has finished.");
+        }
+    }
+    
+    public class JoinYieldExample {
+        public static void main(String[] args) {
+            Task task1 = new Task("Task-1");
+            Task task2 = new Task("Task-2");
+            Task task3 = new Task("Task-3");
+    
+            Thread thread1 = new Thread(task1);
+            Thread thread2 = new Thread(task2);
+            Thread thread3 = new Thread(task3);
+    
+            thread1.start();
+            thread2.start();
+            thread3.start();
+    
+            try {
+                thread1.join();
+                thread2.join();
+                thread3.join();
+            } catch (InterruptedException e) {
+                System.out.println("Main thread was interrupted.");
+            }
+    
+            System.out.println("All threads have finished. Main thread exiting.");
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Task-1 is starting.
+    Task-2 is starting.
+    Task-3 is starting.
+    Task-1 is working. Step 1
+    Task-2 is working. Step 1
+    Task-3 is working. Step 1
+    Task-1 is working. Step 2
+    Task-2 is working. Step 2
+    Task-3 is working. Step 2
+    Task-1 is working. Step 3
+    Task-1 is yielding control.
+    Task-2 is working. Step 3
+    Task-3 is working. Step 3
+    Task-2 is working. Step 4
+    Task-3 is working. Step 4
+    Task-1 has finished.
+    Task-2 is working. Step 5
+    Task-3 is working. Step 5
+    Task-2 has finished.
+    Task-3 has finished.
+    All threads have finished. Main thread exiting.
+       
+
+</pre>
+</body>
+</html>

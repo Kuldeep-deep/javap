@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class SparseMatrixChecker {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of rows in the matrix: ");
+            int rows = scanner.nextInt();
+            System.out.print("Enter the number of columns in the matrix: ");
+            int columns = scanner.nextInt();
+    
+            int[][] matrix = new int[rows][columns];
+            
+            System.out.println("Enter elements of the matrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.printf("Element [%d][%d]: ", i, j);
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            int zeroCount = 0;
+            int totalElements = rows * columns;
+    
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    if (matrix[i][j] == 0) {
+                        zeroCount++;
+                    }
+                }
+            }
+    
+            if (zeroCount > totalElements / 2) {
+                System.out.println("The given matrix is a sparse matrix.");
+            } else {
+                System.out.println("The given matrix is NOT a sparse matrix.");
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of rows in the matrix: 3
+    Enter the number of columns in the matrix: 3
+    Enter elements of the matrix:
+    Element [0][0]: 0
+    Element [0][1]: 0
+    Element [0][2]: 3
+    Element [1][0]: 0
+    Element [1][1]: 0
+    Element [1][2]: 0
+    Element [2][0]: 0
+    Element [2][1]: 0
+    Element [2][2]: 1
+    The given matrix is a sparse matrix.
+     
+
+</pre>
+</body>
+</html>

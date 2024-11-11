@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class RowColumnSumMatrix {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the number of rows in the matrix: ");
+            int rows = scanner.nextInt();
+            System.out.print("Enter the number of columns in the matrix: ");
+            int columns = scanner.nextInt();
+    
+            int[][] matrix = new int[rows][columns];
+    
+            System.out.println("Enter elements of the matrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.printf("Element [%d][%d]: ", i, j);
+                    matrix[i][j] = scanner.nextInt();
+                }
+            }
+    
+            System.out.println("\nMatrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+                System.out.println();
+            }
+    
+            System.out.println("\nSum of each row:");
+            for (int i = 0; i < rows; i++) {
+                int rowSum = 0;
+                for (int j = 0; j < columns; j++) {
+                    rowSum += matrix[i][j];
+                }
+                System.out.println("Sum of row " + (i + 1) + ": " + rowSum);
+            }
+    
+            System.out.println("\nSum of each column:");
+            for (int j = 0; j < columns; j++) {
+                int colSum = 0;
+                for (int i = 0; i < rows; i++) {
+                    colSum += matrix[i][j];
+                }
+                System.out.println("Sum of column " + (j + 1) + ": " + colSum);
+            }
+    
+            scanner.close();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the number of rows in the matrix: 2
+Enter the number of columns in the matrix: 3
+Enter elements of the matrix:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 3
+Element [1][0]: 4
+Element [1][1]: 5
+Element [1][2]: 6
+
+Matrix:
+1 2 3 
+4 5 6 
+
+Sum of each row:
+Sum of row 1: 6
+Sum of row 2: 15
+
+Sum of each column:
+Sum of column 1: 5
+Sum of column 2: 7
+Sum of column 3: 9
+
+
+</pre>
+</body>
+</html>

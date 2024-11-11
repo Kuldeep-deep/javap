@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.time.LocalDate;
+    import java.time.temporal.ChronoUnit;
+    
+    public class Employee {
+        String name;
+        double salary;
+        LocalDate hireDate;
+    
+        public Employee(String name, double salary, LocalDate hireDate) {
+            this.name = name;
+            this.salary = salary;
+            this.hireDate = hireDate;
+        }
+    
+        public long yearsOfService() {
+            return ChronoUnit.YEARS.between(hireDate, LocalDate.now());
+        }
+    
+        public void display() {
+            System.out.println("Name: " + name + ", Salary: $" + salary + ", Years of Service: " + yearsOfService());
+        }
+    
+        public static void main(String[] args) {
+            Employee emp = new Employee("John", 75000, LocalDate.of(2015, 5, 15));
+            emp.display();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Name: John, Salary: $75000.0, Years of Service: 8
+   
+
+</pre>
+</body>
+</html>
+

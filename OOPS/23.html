@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Student {
+        static int rollNoCounter = 1;
+        int rollNo;
+        String name;
+        String studentClass;
+    
+        public Student(String name, String studentClass) {
+            this.rollNo = rollNoCounter++;
+            this.name = name;
+            this.studentClass = studentClass;
+        }
+    
+        public void displayInfo() {
+            System.out.println("Roll No: " + rollNo + ", Name: " + name + ", Class: " + studentClass);
+        }
+    
+        public static void main(String[] args) {
+            for (int i = 0; i < 10; i++) {
+                Student student = new Student("Student" + (i + 1), "10A");
+                student.displayInfo();
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Roll No: 1, Name: Student1, Class: 10A
+    Roll No: 2, Name: Student2, Class: 10A
+    ...
+    Roll No: 10, Name: Student10, Class: 10A
+     
+
+</pre>
+</body>
+</html>

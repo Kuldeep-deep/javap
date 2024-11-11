@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    abstract class Shape {
+        public abstract double calculateArea();
+        public abstract double calculatePerimeter();
+    }
+    
+    class Rectangle extends Shape {
+        double length, width;
+    
+        public Rectangle(double length, double width) {
+            this.length = length;
+            this.width = width;
+        }
+    
+        public double calculateArea() {
+            return length * width;
+        }
+    
+        public double calculatePerimeter() {
+            return 2 * (length + width);
+        }
+    }
+    
+    class Circle extends Shape {
+        double radius;
+    
+        public Circle(double radius) {
+            this.radius = radius;
+        }
+    
+        public double calculateArea() {
+            return Math.PI * radius * radius;
+        }
+    
+        public double calculatePerimeter() {
+            return 2 * Math.PI * radius;
+        }
+    }
+    
+    class Triangle extends Shape {
+        double a, b, c;
+    
+        public Triangle(double a, double b, double c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+    
+        public double calculateArea() {
+            double s = (a + b + c) / 2;
+            return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        }
+    
+        public double calculatePerimeter() {
+            return a + b + c;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Rectangle rect = new Rectangle(5, 10);
+            Circle circ = new Circle(7);
+            Triangle tri = new Triangle(3, 4, 5);
+    
+            System.out.println("Rectangle Area: " + rect.calculateArea() + ", Perimeter: " + rect.calculatePerimeter());
+            System.out.println("Circle Area: " + circ.calculateArea() + ", Perimeter: " + circ.calculatePerimeter());
+            System.out.println("Triangle Area: " + tri.calculateArea() + ", Perimeter: " + tri.calculatePerimeter());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Rectangle Area: 50.0, Perimeter: 30.0
+Circle Area: 153.93804002589985, Perimeter: 43.982297150257104
+Triangle Area: 6.0, Perimeter: 12.0
+
+
+</pre>
+</body>
+</html>

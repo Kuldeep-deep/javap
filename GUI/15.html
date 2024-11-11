@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.awt.*;
+
+    public class ListCustomLayout extends Frame {
+        public ListCustomLayout() {
+            setLayout(null);
+            List list = new List();
+            list.add("Item 1");
+            list.add("Item 2");
+            list.add("Item 3");
+            list.setBounds(50, 50, 100, 60);
+            add(list);
+            setSize(200, 200);
+            setVisible(true);
+        }
+        public static void main(String[] args) {
+            new ListCustomLayout();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    <img src="15.jpg">
+
+</pre>
+</body>
+</html>

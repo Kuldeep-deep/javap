@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Overview</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #4e8098;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.6em;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1em;
+        }
+
+        /* List styling */
+        p ul {
+            list-style: disc inside;
+            margin-left: 1em;
+            color: #333;
+        }
+
+        p ul li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Bold subheadings in paragraphs */
+        p b {
+            color: #4e8098;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            section {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java Programming Overview</h1>
+    </header>
+
+    <section>
+        <h2>1. Java Basics</h2>
+        <p>Java is a high-level, object-oriented programming language widely used for building web, desktop, and mobile applications. It is platform-independent, meaning Java applications can run on any operating system that has a Java Virtual Machine (JVM). Here are some key concepts:</p>
+        <ul>
+            <li><b>Syntax:</b> Java syntax is similar to C++ but is designed to be simpler and safer.</li>
+            <li><b>Data Types:</b> Java supports various data types, including int, float, char, and boolean, along with objects and arrays.</li>
+            <li><b>Control Statements:</b> Java includes if-else, switch, while, do-while, and for loops for controlling the flow of a program.</li>
+            <li><b>JVM:</b> Java applications run on the Java Virtual Machine, which makes Java platform-independent.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Object-Oriented Programming (OOP) Principles</h2>
+        <p>Java is built around object-oriented programming principles, which helps developers create reusable and modular code. The four core principles of OOP are:</p>
+        <ul>
+            <li><b>Encapsulation:</b> The concept of bundling data (variables) and methods (functions) within a class and restricting access to certain parts of the object to prevent data manipulation from outside.</li>
+            <li><b>Inheritance:</b> A mechanism that allows one class (subclass) to inherit properties and behaviors from another class (superclass).</li>
+            <li><b>Polymorphism:</b> The ability for methods to take many forms, allowing one method to be used in multiple contexts, such as method overloading and overriding.</li>
+            <li><b>Abstraction:</b> The process of hiding complex implementation details and showing only essential information to the user, making code easier to understand and use.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Exception Handling</h2>
+        <p>In Java, exception handling is used to handle runtime errors and maintain the normal flow of the application. Java provides a robust set of tools for handling exceptions using try-catch blocks:</p>
+        <ul>
+            <li><b>try-catch:</b> The try block contains code that might throw an exception, and the catch block handles the exception.</li>
+            <li><b>finally:</b> The finally block executes code after try-catch, regardless of whether an exception was thrown. It's commonly used for resource cleanup.</li>
+            <li><b>throw:</b> Used to explicitly throw an exception from a method or a block of code.</li>
+            <li><b>throws:</b> Declares that a method can throw certain types of exceptions, warning the caller to handle these exceptions.</li>
+        </ul>
+        <p>Proper exception handling ensures that Java programs can recover from errors and continue running smoothly, improving their reliability and robustness.</p>
+    </section>
+</body>
+</html>

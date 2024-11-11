@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+
+    import java.applet.Applet;
+    import java.awt.Graphics;
+    
+    public class SmilingFaceApplet extends Applet {
+        public void paint(Graphics g) {
+            g.drawOval(50, 50, 150, 150);
+            g.setColor(java.awt.Color.black);
+            g.fillOval(90, 90, 10, 10);
+            g.fillOval(140, 90, 10, 10);
+            g.drawArc(90, 100, 70, 50, 0, -180);
+        }
+    }
+    
+    
+
+</pre>
+</body>
+</html>

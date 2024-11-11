@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    class Rectangle {
+        private double length;
+        private double width;
+    
+        public double getLength() {
+            return length;
+        }
+    
+        public void setLength(double length) {
+            this.length = length;
+        }
+    
+        public double getWidth() {
+            return width;
+        }
+    
+        public void setWidth(double width) {
+            this.width = width;
+        }
+    
+        public double calculateArea() {
+            return length * width;
+        }
+    
+        public double calculatePerimeter() {
+            return 2 * (length + width);
+        }
+    
+        public static void main(String[] args) {
+            Rectangle rectangle = new Rectangle();
+            rectangle.setLength(5.0);
+            rectangle.setWidth(3.0);
+            System.out.println("Area: " + rectangle.calculateArea());
+            System.out.println("Perimeter: " + rectangle.calculatePerimeter());
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Area: 15.0
+Perimeter: 16.0
+
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    interface Encryptable {
+        String encrypt(String data);
+        String decrypt(String encryptedData);
+    }
+    
+    class AES implements Encryptable {
+    
+        @Override
+        public String encrypt(String data) {
+            // For demonstration purposes, we simulate encryption by reversing the string
+            String encryptedData = new StringBuilder(data).reverse().toString();
+            return encryptedData;
+        }
+    
+        @Override
+        public String decrypt(String encryptedData) {
+            // Simulating decryption by reversing the string back to original
+            String decryptedData = new StringBuilder(encryptedData).reverse().toString();
+            return decryptedData;
+        }
+    }
+    
+    class RSA implements Encryptable {
+    
+        @Override
+        public String encrypt(String data) {
+            // For demonstration purposes, we simulate encryption by converting to uppercase
+            return data.toUpperCase();
+        }
+    
+        @Override
+        public String decrypt(String encryptedData) {
+            // Simulating decryption by converting back to lowercase
+            return encryptedData.toLowerCase();
+        }
+    }
+    
+    public class EncryptionTest {
+        public static void main(String[] args) {
+            Encryptable aes = new AES();
+            Encryptable rsa = new RSA();
+            
+            String originalData = "HelloWorld";
+    
+            String aesEncrypted = aes.encrypt(originalData);
+            String aesDecrypted = aes.decrypt(aesEncrypted);
+    
+            String rsaEncrypted = rsa.encrypt(originalData);
+            String rsaDecrypted = rsa.decrypt(rsaEncrypted);
+    
+            System.out.println("Original Data: " + originalData);
+            System.out.println("AES Encrypted: " + aesEncrypted);
+            System.out.println("AES Decrypted: " + aesDecrypted);
+            System.out.println("RSA Encrypted: " + rsaEncrypted);
+            System.out.println("RSA Decrypted: " + rsaDecrypted);
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Original Data: HelloWorld
+AES Encrypted: dlroWolleH
+AES Decrypted: HelloWorld
+RSA Encrypted: HELLOWORLD
+RSA Decrypted: helloworld
+
+
+</pre>
+</body>
+</html>

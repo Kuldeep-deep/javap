@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.ArrayList;
+
+    class Student {
+        String name;
+        int id;
+    
+        public Student(String name, int id) {
+            this.name = name;
+            this.id = id;
+        }
+    }
+    
+    class Teacher {
+        String name;
+        String subject;
+    
+        public Teacher(String name, String subject) {
+            this.name = name;
+            this.subject = subject;
+        }
+    }
+    
+    public class School {
+        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Teacher> teachers = new ArrayList<>();
+        ArrayList<String> classes = new ArrayList<>();
+    
+        public void addStudent(Student student) {
+            students.add(student);
+        }
+    
+        public void removeStudent(Student student) {
+            students.remove(student);
+        }
+    
+        public void addTeacher(Teacher teacher) {
+            teachers.add(teacher);
+        }
+    
+        public void removeTeacher(Teacher teacher) {
+            teachers.remove(teacher);
+        }
+    
+        public void createClass(String className) {
+            classes.add(className);
+        }
+    
+        public void displayInfo() {
+            System.out.println("Students:");
+            students.forEach(s -> System.out.println(s.name + " (ID: " + s.id + ")"));
+            System.out.println("Teachers:");
+            teachers.forEach(t -> System.out.println(t.name + " (Subject: " + t.subject + ")"));
+            System.out.println("Classes: " + classes);
+        }
+    
+        public static void main(String[] args) {
+            School school = new School();
+            school.addStudent(new Student("Alice", 101));
+            school.addTeacher(new Teacher("Mr. Smith", "Math"));
+            school.createClass("Class 10A");
+            school.displayInfo();
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Students:
+    Alice (ID: 101)
+    Teachers:
+    Mr. Smith (Subject: Math)
+    Classes: [Class 10A]
+       
+
+</pre>
+</body>
+</html>

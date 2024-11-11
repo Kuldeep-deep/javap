@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public class OddNumberExceptionExample {
+
+        public static void main(String[] args) {
+            try {
+                checkEvenNumber(5);
+            } catch (Exception e) {
+                System.out.println("Exception caught: " + e);
+            }
+        }
+    
+        public static void checkEvenNumber(int number) throws Exception {
+            if (number % 2 != 0) {
+                throw new Exception("The number " + number + " is odd, and an exception was thrown.");
+            } else {
+                System.out.println("The number " + number + " is even.");
+            }
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Exception caught: The number 5 is odd, and an exception was thrown.
+   
+
+</pre>
+</body>
+</html>

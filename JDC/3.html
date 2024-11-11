@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    public static void insertRow(Connection conn) throws SQLException {
+        String insertSQL = "INSERT INTO Employee (name, age, salary) VALUES ('John Doe', 30, 50000)";
+        try (Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(insertSQL);
+            System.out.println("Row inserted.");
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Row inserted.
+
+
+</pre>
+</body>
+</html>

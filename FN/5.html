@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Arrays</title>
+    <!-- <link rel="stylesheet" type="text/css" href="st.css"> -->
+    <style>
+        body {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: white;
+           
+        }
+        /* h1{
+            color: rgb(237, 237, 240);
+            margin-bottom: 3px;
+            background-color: darkslateblue;
+        } */
+        pre{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+<pre>
+    <h1>CODE</h1>
+    import java.util.Scanner;
+
+    public class InvestmentCalculator {
+    
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            System.out.print("Enter the principal amount (initial investment): ");
+            double principal = scanner.nextDouble();
+    
+            System.out.print("Enter the annual interest rate (in percentage): ");
+            double interestRate = scanner.nextDouble();
+    
+            System.out.print("Enter the number of years: ");
+            int years = scanner.nextInt();
+    
+            double futureValue = computeFutureInvestmentValue(principal, interestRate, years);
+            System.out.printf("Future Investment Value: %.2f\n", futureValue);
+    
+            scanner.close();
+        }
+    
+        public static double computeFutureInvestmentValue(double principal, double interestRate, int years) {
+            double rate = interestRate / 100; // Convert percentage to decimal
+            return principal * Math.pow((1 + rate), years);
+        }
+    }
+    
+    <h2>OUTPUT</h2>
+    Enter the principal amount (initial investment): 1000
+    Enter the annual interest rate (in percentage): 5
+    Enter the number of years: 10
+    Future Investment Value: 1628.89
+        
+
+</pre>
+</body>
+</html>
